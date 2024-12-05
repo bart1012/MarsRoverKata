@@ -4,16 +4,11 @@
     {
         static void Main(string[] args)
         {
-            string input = "lrm";
-            var inst = InputParser.ParseInstructions(input);
-            if (inst is null)
-            {
-                Console.WriteLine("null");
-            }
-            foreach (var item in inst)
-            {
-                Console.WriteLine(item);
-            }
+            MissionControl missionControl = new();
+            Position rover1Pos = new Position(5, 5, Enums.CompassDirections.N);
+            Rover rover1 = missionControl.InitaliseNewRover(rover1Pos);
+            Console.WriteLine(rover1Pos.ToString());
+
         }
     }
 }

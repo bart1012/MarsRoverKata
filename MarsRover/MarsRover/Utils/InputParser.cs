@@ -34,13 +34,14 @@ namespace MarsRover
             int x;
             int y;
             char position;
-            string[] dimensions;
+            string[] positionData;
 
-            if (inputString.Contains(',')) dimensions = inputString.Split(",");
-            else dimensions = inputString.Split(" ");
+            if (inputString.Contains(',')) positionData = inputString.Split(",");
+            else positionData = inputString.Split(" ");
 
 
-            if (int.TryParse(dimensions[0], out x) && int.TryParse(dimensions[0], out y)) return new Position(x, y, (CompassDirections)char.ToLower(char.Parse(dimensions[2])));
+            if (int.TryParse(positionData[0], out x) && int.TryParse(positionData[1], out y))
+                return new Position(x, y, (CompassDirections)Enum.Parse(typeof(CompassDirections), positionData[2]));
             else return null;
         }
 

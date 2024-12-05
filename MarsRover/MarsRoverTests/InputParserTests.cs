@@ -164,7 +164,7 @@ namespace MarsRoverTests
 
         public static object[] testCasesForPraseInstructions =
         {
-            new object[]{"lrm", new Instructions[] {Instructions.L, Instructions.R, Instructions.M} }
+            new object[]{"lrm", new Instructions[] {Instructions.L, Instructions.R, Instructions.M} },
             new object[]{"lrms", null }
         };
 

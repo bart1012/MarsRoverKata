@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string input = "lrm";
+            var inst = InputParser.ParseInstructions(input);
+            if (inst is null)
+            {
+                Console.WriteLine("null");
+            }
+            foreach (var item in inst)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace MarsRover
 
         public static Plateau? ParsePlateauSize(string inputString)
         {
-            regEx = new(@"^\d[ ,]\d");
+            regEx = new(@"^\d{1,2}[ ,]\d{1,2}");
 
             if (!regEx.IsMatch(inputString)) return null;
 

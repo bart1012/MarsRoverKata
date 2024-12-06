@@ -53,7 +53,8 @@ namespace MarsRover
         {
 
             DetectTerrainBoundry();
-            if (_shouldStop) return;
+            DetectRock();
+            if (_shouldStop) { Console.WriteLine("Something is in the way"); return; }
             switch (Position.Direction)
             {
                 case CompassDirections.N: Position.UpdateY(Position.Y + 1); break;
@@ -73,6 +74,18 @@ namespace MarsRover
             else if (Position.Y == ((_terrain.Y / 2) - 1) && Position.Direction == CompassDirections.N) _shouldStop = true;
             else if (Position.Y == -((_terrain.X / 2) - 1) && Position.Direction == CompassDirections.S) _shouldStop = true;
             else _shouldStop = false;
+        }
+
+        private void DetectRock()
+        {
+            foreach (Rock rock in _terrain.Rocks)
+            {
+                if (Position.X == (rock.x + 1) && Position.Direction == CompassDirections.W) _shouldStop = true;
+                else if (Position.X == (rock.x - 1) && Position.Direction == CompassDirections.E) _shouldStop = true;
+                else if (Position.Y == (rock.y - 1) && Position.Direction == CompassDirections.N) _shouldStop = true;
+                else if (Position.Y == (rock.y + 1) && Position.Direction == CompassDirections.S) _shouldStop = true;
+                else _shouldStop = false;
+            }
         }
 
         public void ExecuteInstructions(Instructions[] instructions)

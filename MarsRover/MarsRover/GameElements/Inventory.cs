@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover.GameElements
+﻿namespace MarsRover.GameElements
 {
-    internal class Inventory
+    public class Inventory
     {
+        public List<Sample> Samples { get; private set; }
+
+        public Inventory()
+        {
+            Samples = new();
+        }
+
+        public void Add(Sample sample)
+        {
+            Samples.Add(sample);
+        }
+
+        public void Remove(Sample sample)
+        {
+            Samples.Remove(sample);
+        }
     }
 }

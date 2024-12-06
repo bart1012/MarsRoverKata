@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover
+﻿namespace MarsRover
 {
-    internal class Sample
+    public class Sample(int ID)
     {
+        public int ID = ID;
     }
 }

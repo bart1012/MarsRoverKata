@@ -3,7 +3,7 @@ using MarsRover;
 using MarsRover.Enums;
 namespace MarsRoverTests
 {
-    public class Tests
+    public class InputParserTests
     {
 
         [Test]
@@ -17,6 +17,19 @@ namespace MarsRoverTests
 
             //Assert
             Assert.That(result, Is.EqualTo(new Plateau(5, 5)));
+        }
+
+        [Test]
+        public void InputParser_ParsePlateauSize_TwoDoubleDigitIntegers()
+        {
+            //Arrange
+            string input = "10 10";
+
+            //Act
+            var result = MarsRover.InputParser.ParsePlateauSize(input);
+
+            //Assert
+            Assert.That(result, Is.EqualTo(new Plateau(10, 10)));
         }
 
         [Test]

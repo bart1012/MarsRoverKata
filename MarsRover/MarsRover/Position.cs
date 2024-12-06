@@ -13,9 +13,13 @@ namespace MarsRover
             Direction = direction;
         }
 
-        public void UpdatePosition(int x, int y)
+        public void UpdateX(int x)
         {
             X = x;
+        }
+
+        public void UpdateY(int y)
+        {
             Y = y;
         }
 
